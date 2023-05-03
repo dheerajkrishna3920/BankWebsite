@@ -23,9 +23,9 @@
 
 
         <form action="">
-            <input (change)="unameChange($event)" type="text" [placeholder]="placeHolderData" class="account form-control container"> 
-            <input type="password" placeholder="Password" class="password form-control container">
-            <button (click)="login()" type="submit" class="mt-5 text-center button1">Log In</button>
+            <input #uname  type="text" [placeholder]="placeHolderData" class="account form-control container"> 
+            <input #psw type="password" placeholder="Password" class="password form-control container">
+            <button (click)="login(uname,psw)" type="submit" class="mt-5 text-center button1">Log In</button>
 
         </form>
 

@@ -13,17 +13,21 @@ export class FirstcomponentComponent implements OnInit {
   placeHolderData="Account no"   
 
 
+  uname:any
+  psw:any
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  login(){
+  login(a:any,b:any){
+    this.uname=a.value
+    this.psw=b.value
+    console.log(this.uname,this.psw);
+    
     alert("log in succesfull")
   }
 
-  unameChange(event:any){
-    console.log(event.target.value);
-    
-  }
+  
 }
