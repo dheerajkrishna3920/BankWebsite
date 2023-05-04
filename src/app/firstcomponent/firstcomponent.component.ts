@@ -26,7 +26,8 @@ export class FirstcomponentComponent implements OnInit {
     console.log(this.uname, this.psw);
 
     //alert(this.ds.checkData())
-    alert(this.ds.sData)
+    //alert(this.ds.sData)
+    alert(`${this.ds.checkData()} ${this.ds.sData}`)
   }
 
 
