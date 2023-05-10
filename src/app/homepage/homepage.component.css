@@ -1,0 +1,20 @@
+.header{
+    font-family: 'Bona Nova', serif;
+    color: brown;
+}
+.para{
+color: blueviolet;
+font-family: 'Bona Nova', serif;
+}
+.btn{
+    background-color: burlywood;
+}
+
+.body{
+    height:781px;
+    background-color:  #10abeb29;
+
+}
+.main{
+    margin-top: -48px;
+}

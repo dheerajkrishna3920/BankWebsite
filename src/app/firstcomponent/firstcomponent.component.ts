@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-firstcomponent',
@@ -17,7 +18,7 @@ export class FirstcomponentComponent implements OnInit {
   uname: any
   psw: any
 
-  constructor(private ds:DataService) { }
+  constructor(private rout:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,9 +26,7 @@ export class FirstcomponentComponent implements OnInit {
   login() {
     console.log(this.uname, this.psw);
 
-    //alert(this.ds.checkData())
-    //alert(this.ds.sData)
-    alert(`${this.ds.checkData()} ${this.ds.sData}`)
+  this.rout.navigateByUrl('home')
   }
 
 

@@ -5,11 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-sData="service data"
+
 
   constructor() { }
 
-  checkData(){
-    return "hello hi"
-  }
+ 
 }

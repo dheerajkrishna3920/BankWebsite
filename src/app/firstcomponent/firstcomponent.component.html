@@ -8,32 +8,50 @@
     @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Asul&family=Bona+Nova:wght@700&family=Cormorant+Garamond:ital,wght@1,300&family=DM+Serif+Display&family=Gloock&family=Italianno&family=Labrada:wght@600&family=Lobster&family=Lobster+Two:wght@700&family=Merriweather:wght@400;700&family=Noto+Serif:ital,wght@1,700&family=Playfair+Display:ital@1&family=Poltawski+Nowy:wght@700&family=Rampart+One&family=Roboto&family=Shantell+Sans:wght@300&family=Tilt+Prism&family=Vesper+Libre&family=Ysabeau:ital,wght@1,700&display=swap');
 </style>
 
-<body class="background ">
-
-    <h3>{{data}}</h3>
-
-    <div class=" w-50 div-2 mt-5 p-5">
-
-        <h3 class="">{{data}}</h3>
-        <h1 class="mb-5   text-center h1">Log In</h1>
 
 
-        <form action="">
-            <input [(ngModel)]="uname" type="text" [placeholder]="placeHolderData"
-                class="account form-control container" name="uname" id="u1">
-            <input [(ngModel)]="psw" type="password" placeholder="Password" class="password form-control container"
-                name="psw" id="p1">
-            <button (click)="login()" type="submit" class="mt-5 text-center button1">Log In</button>
+<header></header>
+<div class="body background p-5">
 
-        </form>
 
-        <div class="text-center div-3 mt-4">
-            don't you have an account? <a class="click" href=""> click here</a>
+    <div class="row ">
+
+        <h3 class="text-center">{{data}}</h3>
+
+        <div class="div-2 text-center col-6 p-5">
+
+            <form action="" class="form">
+
+
+                <h1 class="mb-5   text-center h1">Log In</h1>
+                <input [(ngModel)]="uname" type="text" [placeholder]="placeHolderData"
+                    class="account form-control container" name="uname" id="u1">
+                <input [(ngModel)]="psw" type="password" placeholder="Password" class="password form-control container"
+                    name="psw" id="p1">
+                <button (click)="login()" type="submit" class="mt-5 text-center button1">Log In</button>
+
+
+
+                <div class="text-center div-3 mt-4">
+                    don't you have an account? <a class="click" routerLink="register"> click here</a>
+                </div>
+
+
+            </form>
+
         </div>
 
+        <div class="col col-6container p-5">
+
+        </div>
 
     </div>
 
 
 
-</body>
+
+
+
+
+</div>
+<footer></footer>
