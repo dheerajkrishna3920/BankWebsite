@@ -1,23 +1,47 @@
 
-<header></header>
 
 <div class="body background p-5">
 
 
     <div class="row ">
 
-        
+
 
         <div class="container div-2 text-center col-6">
 
-            <form (ngSubmit)="register()" action="" class="form">
+            <form [formGroup]="registerForm" (ngSubmit)="register()" action="" class="form">
 
                 <h1 class="mb-5 mt-4  text-center h1">Sign Up</h1>
-                <input [(ngModel)]="accno" type="text" placeholder="Account No" class="account form-control container" name="accno" id="a1">
-                <input  [(ngModel)]="uname" type="text" placeholder="Username" class="password form-control container" name="uname"
-                    id="u1">
-                <input  [(ngModel)]="psw" type="password" placeholder="Password" class="password form-control container" name="psw"
-                    id="p1">
+                <input formControlName="acno" type="text" placeholder="Account No"
+                    class="account form-control container" name="accno" id="a1">
+
+                    <div *ngIf="(this.registerForm.get('acno')?.errors)&&(this.registerForm.get('acno')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Account number must contain numbers only </p>
+                    </div>
+
+                <input formControlName="uname" type="text" placeholder="Username"
+                    class="password form-control container" name="uname" id="u1">
+
+                    <div *ngIf="(this.registerForm.get('uname')?.errors)&&(this.registerForm.get('uname')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Username must contain Characters only </p>
+                    </div>
+
+                <input formControlName="psw" type="password" placeholder="Password"
+                    class="password form-control container" name="psw" id="p1">
+
+
+                    <div *ngIf="(this.registerForm.get('psw')?.errors)&&(this.registerForm.get('psw')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Password must contain Characters and numbers only </p>
+                    </div>
+
+                <input formControlName="cpsw" type="password" placeholder="ConfirmPassword"
+                    class="password form-control container" name="psw" id="p1">
+
+                    <div *ngIf=" pswCheck">
+                        <p style="font-size: 15px;" class="text-danger">Password deosnt match</p>
+                    </div>
+
+
                 <button type="submit" class="mt-5 text-center button1">Sign Up</button>
 
             </form>
@@ -37,4 +61,3 @@
 
 </div>
 
-<footer></footer>

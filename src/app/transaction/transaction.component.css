@@ -1,0 +1,175 @@
+.row {
+ padding: 0px;
+margin: 0px;
+background-color: rgb(255, 255, 255);
+
+}
+
+.As {
+    color: brown;
+ background-color: rgb(252, 252, 252);
+ margin: 0px;
+
+}
+
+.An {
+    color: rgb(0, 0, 0);
+    width:25%;
+    margin-top: 50px;
+
+}
+
+.Ahn {
+    color: rgb(0, 0, 0);
+    margin-top: 15px;
+    width:50%
+}
+
+.main {
+   
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.hr {
+    color: rgb(0, 0, 0);
+
+}
+
+.date {
+    color: rgb(255, 255, 255);
+    margin-top: 15px;
+}
+
+.image {
+    height: 350px;
+    background-image: url(./image/transaction1.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 60px;
+    
+}
+
+.table {
+    background-color: darkcyan;
+    width:80%
+}
+.tablediv{
+    background-color: brown;
+    margin-top: -17px;
+}
+th{
+    font-size: 20px;
+}
+.amount{
+    font-size: 20px;
+}
+.butn{
+    background-color: burlywood;
+}
+.butn:hover{
+    background-color: greenyellow;
+}
+.all{
+    background-color: blueviolet;
+    color: white;
+}
+.filter{
+    width:20%
+}
+
+
+
+@media (min-width:770px) and (max-width:1500px){
+    .image {
+        height: 300px;
+        margin-top: 0px;
+    }
+    .An {
+        width:25%
+    
+    }
+    
+    .Ahn {
+        width:50%
+    }
+    .table {
+        width:80%
+    }
+    .main {
+   
+        height: 115px;
+  
+    }
+   
+}
+@media (min-width:500px) and (max-width:770px){
+    .image {
+        height: 300px;
+        margin-top: 0px;
+    }
+    .An {
+        width:50%
+    
+    }
+    
+    .Ahn {
+        width:70%
+    }
+    .table {
+        width:80%
+    }
+    .main {
+   
+        height: 115px;
+  
+    }
+    
+    
+   
+    
+}
+@media (min-width:300px) and (max-width:500px){
+    .image {
+        height: 250px;
+        margin-top: 60px;
+    }
+    .An {
+        width:90%
+    
+    }
+    
+    .Ahn {
+        width:90%
+    }
+    .table {
+        width:80%
+    }
+    .filter{
+        font-size: 10px;
+    }
+    
+    
+}
+@media (min-width:200px) and (max-width:300px){
+    .image {
+        height: 250px;
+        margin-top: 60px;
+    }
+    .An {
+        width:90%
+    
+    }
+    
+    .Ahn {
+        width:90%
+    }
+    .main {
+   
+        height: 285px;
+  
+    }
+    
+    
+}

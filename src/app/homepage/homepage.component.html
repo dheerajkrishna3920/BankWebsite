@@ -1,13 +1,185 @@
-<div class="body text-center">
+<div class="body text-center p-5">
 
-    <div class="main">
-        <h1 class="header text-center mt-5 p-5">WELCOME</h1>
-        <p class="container  p-5 para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt nobis ad atque
-            ipsam magnam delectus expedita
-            cupiditate distinctio vel maxime, nihil doloremque saepe nisi et, esse impedit! Fugit, qui doloremque!</p>
 
-        <button class="btn">Read More</button>
+    <div class="row">
+        <div  class="main container  col-lg-6 col-md-6 col-sm-12">
+
+
+            <h1 class="header text-center mt-5 p-5">Welcome {{user}}</h1>
+            <p  class=" para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt nobis ad atque
+                ipsam magnam delectus expedita
+                cupiditate distinctio vel maxime, nihil doloremque saepe nisi et, esse impedit! Fugit, qui doloremque!
+            </p>
+
+
+
+
+            <div  class=" main1 p-5 container">
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="container p-5 col-lg-6 col-md-6 col-sm-12 buttons">
+
+            <button [ngClass]="Dacno?'cc':''" (click)=" getBalance()" class="btn btn-success mb-5 butn1 form-control" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Balance Enquiry</button> <br>
+
+
+            <button [ngClass]="Dacno?'cc':''" (click)="getUser()" class="btn btn-success mb-5 butn form-control" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">View Account Details</button> <br>
+
+
+            <button [ngClass]="Dacno?'cc':''" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                class="btn btn-success mb-5 butn form-control">Send Money</button> <br>
+
+
+
+            <a href="/transaction">
+                <button [ngClass]="Dacno?'cc':''" class="btn btn-success mb-5 butn form-control">Account Statement</button> <br>
+            </a>
+
+
+
+            <button [ngClass]="Dacno?'cc':''" class="btn btn-success mb-5 butn form-control" (click)="deleteClick()">Delete Account</button> <br>
+
+            
+            <app-delete (onDelete)="yesDelete($event)" (onCancel)="noDelete()" [childAcno]="Dacno"></app-delete>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div [ngClass]="Dacno?'cc':''" class="logout">
+        <button (click)="logout()" class="btn btn-warning mb-5 logbut">LogOut</button>
     </div>
 
 
+
+</div>
+
+
+
+
+<div class="offcanvas offcanvas-start balance" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasExampleLabel">Hey {{user}}...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="">
+            <h4 style="color:bisque">Account Number : {{acno}}</h4>
+            <hr>
+            <h4 style="color:bisque">Your Current Account Balance:</h4>
+            <h3 style="color:bisque">Rs.{{balance}}</h3>
+            <hr>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade details" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background-color:white">
+
+
+
+            <div class="fundimage mt-3">
+
+            </div>
+
+            <div class="modal-body text-center">
+                <h3 class="modal-title " id="exampleModalLabel">{{user}}</h3>
+                <h4>Account Number : {{acno}}</h4>
+            </div>
+            <div style="background-color: blueviolet;" class="modal-footer text-center">
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content fundtransfer">
+
+            <div class="modal-body text-center">
+
+                <div class="fundimage1">
+
+                </div>
+
+
+                <form [formGroup]="moneyTransForm" action="" class="form">
+
+
+                    <h2 class="mt-3">Money Transfer</h2>
+
+
+                    <input formControlName="toAcno" type="text" placeholder="To Account Number"
+                        class="form-control mt-3" name="toacno" id="f1">
+
+
+                    <div
+                        *ngIf="(this.moneyTransForm.get('toAcno')?.errors)&&(this.moneyTransForm.get('toAcno')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Account number must contain numbers only </p>
+                    </div>
+
+
+
+                    <input formControlName="amount" type="text" placeholder="Amount" class="form-control mt-3"
+                        name="amnt" id="f2">
+
+
+
+                    <div
+                        *ngIf="(this.moneyTransForm.get('amount')?.errors)&&(this.moneyTransForm.get('amount')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Amount must contain numbers only </p>
+                    </div>
+
+
+
+                    <input formControlName="psw" type="Password" placeholder="Password" class="form-control mt-3"
+                        name="pswd1" id="f3">
+
+
+                    <div *ngIf="(this.moneyTransForm.get('psw')?.errors)&&(this.moneyTransForm.get('psw')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Password must contain Characters and numbers
+                            only </p>
+                    </div>
+
+
+                    <button (click)="fundTransfer()" type="submit" class="btn btn-success mt-3">Transfer</button>
+                </form>
+            </div>
+            <div style="background-color: #32595d" class="text-center">
+                <h4 [ngClass]="tStatus?'s1':'s2'">{{transactionStatus}}</h4>
+                <button type="submit" class="btn btn-secondary transfoot mb-2" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,26 +1,18 @@
 .body {
     padding: 0px;
     margin: 0px;
-    height: 661px;    
-}
-header{
-    height:35px;
-    background-color: rgba(74, 190, 136, 0.96);
-   
-
-}
-footer{
-    height:35px;
-    background-color: rgba(74, 190, 136, 0.96);
-
+    height: 641px;
+    font-family: 'Bona Nova', serif;
 }
 
-.col{
+
+.col {
+    height: 550px;
     background-image: url(./images/bank.avif);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    transition: 1s ease-in-out; 
+    transition: 1s ease-in-out;
 }
 
 
@@ -38,8 +30,8 @@ footer{
     margin-top: 50px;
     transition: 1s ease-in-out;
     border: 2px rgb(0, 0, 0) solid;
-    background-color:rgba(74, 190, 136, 0.96);
- 
+    background-color: rgba(25, 105, 97, 0.73);
+
 
 }
 
@@ -71,9 +63,9 @@ footer{
     border-radius: 15px;
     background-color: rgb(0, 0, 0);
     font-family: 'Bona Nova', serif;
-    border:white ; 
-    color:rgba(74, 190, 136, 0.96); 
-   
+    border: white;
+    color: rgba(74, 190, 136, 0.96);
+
 }
 
 .div-3 {
@@ -82,7 +74,12 @@ footer{
 }
 
 .click {
-    color:red
+    color: red
+}
+
+.tagline {
+    color: rgb(0, 0, 0);
+    font-family: 'Bona Nova', serif;
 }
 
 
@@ -92,7 +89,10 @@ footer{
         height: 460px;
         border-radius: 100px;
     }
-    .col{
+
+    .col {
+
+        height: 550px;
         width: 50%;
     }
 
@@ -115,7 +115,7 @@ footer{
 
     .body {
 
-        height: 742px;
+        height: 1064px;
     }
 
     .div-3 {
@@ -125,13 +125,16 @@ footer{
 
 @media(min-width:450px) and (max-width:600px) {
     .div-2 {
-        width: 65%;
+        width: 100%;
         height: 460px;
         border-radius: 100px;
     }
-    .col{
-        width: 50%;
+
+    .col {
+        height: 550px;
+        width: 90%;
     }
+
     .account {
         height: 40px;
         width: 85%;
@@ -151,7 +154,7 @@ footer{
 
     .body {
         text-align: center;
-        height: 742px;
+        height: 1064px;
     }
 }
 
@@ -161,14 +164,15 @@ footer{
         height: 500px;
         border-radius: 100px;
     }
-    .col{
-        width: 50%;
-     
+    .col {
+        height: 550px;
+        width: 100%;
     }
-    .h1{
+    .h1 {
         font-size: 30px;
         margin-top: 15px;
     }
+
     .account {
         height: 40px;
         width: 100%;
@@ -188,7 +192,7 @@ footer{
 
     .body {
 
-        height: 742px;
+        height: 1064px;
 
 
     }
@@ -204,7 +208,9 @@ footer{
         height: 460px;
         border-radius: 100px;
     }
-    .col{
+
+    .col {
+        height: 550px;
         width: 100%;
     }
     .account {
@@ -226,7 +232,7 @@ footer{
 
     .body {
 
-        height: 742px;
+        height: 1064px;
 
 
     }

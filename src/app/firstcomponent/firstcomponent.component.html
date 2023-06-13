@@ -10,26 +10,44 @@
 
 
 
-<header></header>
+
 <div class="body background p-5">
 
 
     <div class="row ">
 
-        <h3 class="text-center">{{data}}</h3>
+       <!-- <h3 class="text-center tagline">{{data}}</h3>-->
 
         <div class="div-2 text-center col-6 p-5">
 
-            <form action="" class="form">
+            <form [formGroup]=" loginForm" action="" class="form">
 
 
                 <h1 class="mb-5   text-center h1">Log In</h1>
-                <input [(ngModel)]="uname" type="text" [placeholder]="placeHolderData"
-                    class="account form-control container" name="uname" id="u1">
-                <input [(ngModel)]="psw" type="password" placeholder="Password" class="password form-control container"
+                <input formControlName="acno"type="text" [placeholder]="placeHolderData"
+                    class="account form-control container" name="acno" id="u1">
+
+                    <div *ngIf="(this.loginForm.get('acno')?.errors)&&(this.loginForm.get('acno')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Account number must contain numbers only </p>
+                    </div>
+
+
+
+                <input formControlName="psw"type="password" placeholder="Password" class="password form-control container"
                     name="psw" id="p1">
+
+
+                    <div *ngIf="(this.loginForm.get('psw')?.errors)&&(this.loginForm.get('psw')?.touched)">
+                        <p style="font-size: 15px;" class="text-danger">Password must contain Characters and numbers only </p>
+                    </div>
+    
+
+
                 <button (click)="login()" type="submit" class="mt-5 text-center button1">Log In</button>
 
+
+
+               
 
 
                 <div class="text-center div-3 mt-4">
@@ -41,7 +59,7 @@
 
         </div>
 
-        <div class="col col-6container p-5">
+        <div class="col col-6 container p-5">
 
         </div>
 
@@ -54,4 +72,3 @@
 
 
 </div>
-<footer></footer>

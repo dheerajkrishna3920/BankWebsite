@@ -1,0 +1,94 @@
+<div class=" text-center row">
+
+
+    <div class=" main ">
+        <div class="As mt-5">
+            <h1 class="">Account Statement</h1>
+        </div>
+
+    </div>
+
+    <div class="image ">
+
+    </div>
+
+    <hr>
+
+
+    <div class="tablediv">
+
+
+        <h4 class="An container">Account Number : {{acno}}</h4>
+        <h4 class="Ahn container ">Account Holder Name : {{user}} </h4>
+        <h5 class="date container">{{date | date : 'medium'}} </h5>
+
+
+
+
+
+        <div class="container p-5">
+
+            <h4 class="text-warning p-5">Filter</h4>
+
+            <button (click)="filterTrans('')" class=" btn btn me-5 all filter">All</button>
+            <button (click)="filterTrans('CREDIT')" class=" btn btn-success me-5 filter">Credit</button>
+            <button (click)="filterTrans('DEBIT')" class=" btn btn-danger filter">Debit</button>
+
+        </div>
+
+
+
+
+        <table class="table table-striped  mt-5 container ">
+
+            <thead>
+
+                <tr>
+                    <th>Index</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let i of transactions | filter:searchString:'type';let n=index">
+                    <td>{{n+1}}</td>
+                    <td>{{i.type}}</td>
+                    <td class="amount">{{i.amount}}</td>
+                    <td>{{i.date}}</td>
+                </tr>
+
+
+            </tbody>
+
+
+
+
+
+        </table>
+
+
+
+
+
+        <div class="text-center">
+            <button (click)="exportPdf()" class=" btn btn-light me-5 filter">Download as PDF</button>
+
+        </div>
+
+        
+
+
+        <a href="/home ">
+            <button class="btn btn  butn mt-5 mb-5 logbut">Home</button>
+        </a>
+    </div>
+
+
+
+
+</div>

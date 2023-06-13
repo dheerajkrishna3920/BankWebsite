@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from '../service/data.service';
 
 
 @Component({
@@ -10,23 +12,57 @@ import { Router } from '@angular/router';
 export class FirstcomponentComponent implements OnInit {
 
 
-  data = "your perfect banking partner"
+  
 
   placeHolderData = "Account no"
 
 
-  uname: any
-  psw: any
 
-  constructor(private rout:Router) { }
+
+
+
+
+  constructor(private rout: Router, private fb: FormBuilder, private ds: DataService) { }
+
+  loginForm = this.fb.group({
+
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]+')]]
+  })
+
+
+
 
   ngOnInit(): void {
   }
 
   login() {
-    console.log(this.uname, this.psw);
+    //console.log(this.uname, this.psw);
 
-  this.rout.navigateByUrl('home')
+    if (this.loginForm.valid) {
+
+      this.ds.loginApi(this.loginForm.value.acno,
+        this.loginForm.value.psw).subscribe((result: any) => {
+
+          //storing token
+          localStorage.setItem('token',JSON.stringify(result.token))
+          alert(result.message)
+          this.rout.navigateByUrl('home')
+          localStorage.setItem('currentAcno',result.currentAcno)
+          localStorage.setItem('currentUser',result.currentUser)
+        },
+          result => {
+            alert(result.error.message)
+          }
+        )
+
+    }
+    else {
+      alert("invalid form")
+    }
+
+
+
   }
 
 

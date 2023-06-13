@@ -1,20 +1,192 @@
-.header{
+.header {
+    color: #e65757;
     font-family: 'Bona Nova', serif;
+}
+
+.para {
+    color: blueviolet;
+    font-family: 'Bona Nova', serif;
+
+}
+
+
+.body {
+    height: 970px;
+    background-color:white
+
+}
+
+
+
+
+.main1 {
+    height:400px;
+    background-image: url(./images/pic1.avif);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 1s ease-in-out; 
+}
+
+.main1 :hover{
+    transition: 1s ease-in-out; 
+}
+
+.logout {
+    margin-top: 200px;
+}
+.logbut{
+    font-family: 'Bona Nova', serif;
+}
+.butn1{
+    font-family: 'Bona Nova', serif;
+    height:45px;
+    margin-top: 150px;
+    font-size: 20px;
+
+}
+.butn{
+    font-family: 'Bona Nova', serif;
+    height:45px;
+    font-size: 20px;
+    
+}
+.butn:hover{
+    background-color:  #e65757;
+}
+.butn1:hover{
+    background-color: #e65757;
+}
+.logbut:hover {
+    background-color: red;
+    color: white;
+}
+.balance{
+    color:crimson;
+    font-family: 'Bona Nova', serif;
+    background-color: rgba(40, 36, 36, 0.997);
+}
+.fundtransfer{
+    background-color: #9ee7cf;;
+    font-family: 'Bona Nova', serif;
+}
+.fundimage{
+    height:150px;
+    background-image: url(./images/logoprofile.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+ 
+}
+.fundimage1{
+    height:200px;
+    width:100%;
+    background-image: url(./images/fund1.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+.details{
     color: brown;
+    font-family: 'Bona Nova', serif;
 }
-.para{
-color: blueviolet;
-font-family: 'Bona Nova', serif;
+.s1{
+    color: greenyellow;
 }
-.btn{
-    background-color: burlywood;
+.s2{
+    color:rgb(238, 54, 54)
 }
 
-.body{
-    height:781px;
-    background-color:  #10abeb29;
 
+@media (min-width:770px) and (max-width:1600px) {
+
+    .body {
+        height: 1000px;
+
+
+    }
+
+    .logout {
+        margin-top: 125px;
+    }
+    .butn1{
+        margin-top: 150px;
+    }
 }
-.main{
-    margin-top: -48px;
+
+@media (min-width:650px) and (max-width:770px) {
+
+    .body {
+        height: 1640px;
+
+
+    }
+
+    .logout {
+        margin-top: 150px;
+    }
+    .butn1{
+        margin-top: 150px;
+    }
+}
+
+@media (min-width:450px) and (max-width:650px) {
+
+    .body {
+        height: 1637px;
+
+
+    }
+
+    .logout {
+        margin-top: 105px;
+    }
+    .butn1{
+        margin-top: 150px;
+    }
+}
+@media (min-width:350px) and (max-width:450px) {
+
+    .body {
+        height: 1720px;
+
+
+    }
+
+    .logout {
+        margin-top: 90px;
+    }
+    .butn1{
+        margin-top: 150px;
+        font-size: 15px;
+    }
+   
+    .butn{
+       font-size: 15px;
+    }
+}
+
+
+@media (min-width:250px) and (max-width:350px) {
+
+    .body {
+        height: 1660px;
+
+
+    }
+
+    .logout {
+        margin-top: 105px;
+    }
+    .butn1{
+        margin-top: 0px;
+        font-size: 12px;
+    }
+    .butn{
+        font-size: 12px;
+     }
+     .logbut {
+        font-size: 15px;
+    }
 }
